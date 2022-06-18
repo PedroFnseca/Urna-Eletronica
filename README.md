@@ -4,8 +4,8 @@
 <br>
 
 > # objetivos 🎯
- - ### Ter uma urna segura onde se precise de uma senha para cada voto.
- - ### Um menu de opções para o mesario decidir se irá encerrar o processo eleitorial ou deixar o usuario cadastrar novo voto.
+ - ### Ter uma urna segura onde se precise de uma senha para cada ação.
+ - ### Um menu de opções para o mesário decidir se irá encerrar o processo eleitorial ou deixar o usuário cadastrar novo voto.
  - ### Caso aconteça de ter votos iguais, o sistema irá iniciar um segundo turno automaticamente.
 
 <br>
