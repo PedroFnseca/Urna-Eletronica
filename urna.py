@@ -112,12 +112,12 @@ def confirmaVoto(voto):
     opcao = votos[4][0]           # nulo 
 
   # Confirma para o usuarip o seu voto
-  print('O seu voto será {}'.format(opcao))
+  print('\nO seu voto será {}'.format(opcao))
   decisao = input('Aperte enter para confirmar ou digite qualquer coisa para cancelar: ')
 
   # Verifica se é isso mesmo que o usuario quer
   if not decisao == '':
-    print('Voto cancelado !')
+    print('Voto cancelado!')
     limpar()
     return liberaVoto()
   else:
@@ -277,7 +277,6 @@ def segundoTurno():
   print('╚═══════════════════════════════════════════════╝\n')
 
   input('Aperte enter para continuar.')
-  limpar()
 
   while True:
     limpar()
@@ -357,6 +356,14 @@ def encerraProcesso2Turno():
   for i in range(2):
     votosTotais += votosSegundoTurno[i][2]
 
+  # Para nao deixar finalizar sem ter votos
+  if votosTotais == 0:
+    print('╔═══════════════════════════════════════════════╗')
+    print('║             Sem votos suficientes ...         ║')
+    print('╚═══════════════════════════════════════════════╝\n')
+    limpar()
+    return opcaoMesario2Turno()
+  
   if votosSegundoTurno[0][2] == votosSegundoTurno[1][2]:
     print('╔═══════════════════════════════════════════════╗')
     print('║               Precisa desempatar ...          ║')
@@ -364,12 +371,6 @@ def encerraProcesso2Turno():
     limpar()
     return opcaoMesario2Turno()
   
-  # Para nao deixar finalizar sem ter votos
-  if votosTotais == 0:
-    print('╔═══════════════════════════════════════════════╗')
-    print('║             Sem votos suficientes ...         ║')
-    print('╚═══════════════════════════════════════════════╝\n')
-    return
  
   # Calcula a porcentagem de cada candidato
   for i in range(2):
@@ -384,12 +385,14 @@ def encerraProcesso2Turno():
   print('║   {}\t║       {}\t║      {}     ║      {}%\t║'.format(votosSegundoTurno[1][0], votosSegundoTurno[1][1], votosSegundoTurno[1][2], votosSegundoTurno[1][3]))
   print('╚═══════════════╩═══════════════╩════════════╩══════════════════╝', '\n')
 
-  if votosSegundoTurno[0][1] > votosSegundoTurno[1][1]:
-    print('\n══════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[0][0]))
+  if votosSegundoTurno[0][2] > votosSegundoTurno[1][2]:
+    print('\n══════════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[0][0]))
   else:
-    print('\n══════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[1][0]))
+    print('\n══════════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[1][0]))
 
+  # Pede para o usuario digitar algo para nao fechar de uma vez
   input('Digite qualquer coisa para sair. ')
+  exit()
 
 # Variaveis globais para melhor controle
 
@@ -416,12 +419,13 @@ senha = '123'
 
 # funcao principal onde fica todo o algoritmo
 def main():
-  limpar()
 
   global aux
   global senha
 
-  if aux:             # Caso nao exista uma senha ele faz o mesario cadastrar
+  # Caso nao exista uma senha ele faz o mesario cadastrar
+  if aux:
+    limpar()
     senha = cadastraSenha()
     aux = False
 
@@ -431,6 +435,6 @@ def main():
   limpar()
   opcaoMesario()
 
-# deixa a votação em loop ate o mesario decidir parar
+# deixa a votação em loop ate o mesario decidir finalizar
 while True:  
   main()
