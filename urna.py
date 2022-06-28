@@ -1,6 +1,9 @@
 import os # Biblioteca para limpar o terminal
 from time import sleep # Biblioteca para manipular tempo
 
+
+#════════════════════════════════════ DEFINIÇÃO DE FUNÇÕES ══════════════════════════════════════════
+
 # Limpa a tela para melhorar a qualidade do terminal
 def limpar():
   sleep(tempo)
@@ -252,19 +255,19 @@ def encerraProcesso():
 
 # Verifica se possui necessidade de ter um segundo turno
 def verifica2Turno():
-  if votos[0][1] == votos[1][1] and votos[0][1] > 0:   # Java / Python
-    votosSegundoTurno[0] = ['Java', 44, 0, 0]        # nome / partido / votos / %
-    votosSegundoTurno[1] = ['Python', 12, 0, 0]      # nome / partido / votos / %
+  if votos[0][1] == votos[1][1] and votos[0][1] > 0:    # Java / Python
+    votosSegundoTurno[0] = ['Java', 44, 0, 0]           # nome / partido / votos / %
+    votosSegundoTurno[1] = ['Python', 12, 0, 0]         # nome / partido / votos / %
     return True
 
-  elif votos[0][1] == votos[2][1]and votos[0][1] > 0:   # Java / JavaScript
-    votosSegundoTurno[0] = ['Java', 44, 0, 0]         # nome / partido / votos / %
-    votosSegundoTurno[1] = ['JavaScript', 7, 0, 0]    # nome / partido / votos / %
+  elif votos[0][1] == votos[2][1] and votos[0][1] > 0:  # Java / JavaScript
+    votosSegundoTurno[0] = ['Java', 44, 0, 0]           # nome / partido / votos / %
+    votosSegundoTurno[1] = ['JavaScript', 7, 0, 0]      # nome / partido / votos / %
     return True
 
   elif votos[1][1] == votos[2][1] and votos[1][1] > 0:  # Python / JavaScript
-    votosSegundoTurno[0] = ['Python', 12, 0, 0]       # nome / partido / votos / %
-    votosSegundoTurno[1] = ['JavaScript', 7, 0, 0]    # nome / partido / votos / %
+    votosSegundoTurno[0] = ['Python', 12, 0, 0]         # nome / partido / votos / %
+    votosSegundoTurno[1] = ['JavaScript', 7, 0, 0]      # nome / partido / votos / %
     return True
 
   else:
@@ -394,7 +397,8 @@ def encerraProcesso2Turno():
   input('Digite qualquer coisa para sair. ')
   exit()
 
-# Variaveis globais para melhor controle
+
+#═══════════════════════════ Variaveis globais para melhor controle ══════════════════════════════════
 
 # Opcoes voto
 votos = [['Java', 0, 0, 0],           # Nome / votos / % absoluta / % valida
@@ -417,6 +421,7 @@ tempo = 1.2
 aux = True
 senha = '123'
 
+
 # funcao principal onde fica todo o algoritmo
 def main():
 
@@ -435,6 +440,8 @@ def main():
   limpar()
   opcaoMesario()
 
+
+#═══════════════════════════════════════════════════════════════════════════════════════════════════
 # deixa a votação em loop ate o mesario decidir finalizar
 while True:  
   main()
