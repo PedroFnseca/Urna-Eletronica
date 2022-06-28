@@ -419,7 +419,7 @@ tempo = 1.2
 
 # Para o algoritmo saber se tem que cadastrar senha ou não
 aux = True
-senha = '123'
+senha = ''
 
 
 # funcao principal onde fica todo o algoritmo
