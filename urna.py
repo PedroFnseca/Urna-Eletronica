@@ -4,7 +4,7 @@ from time import sleep # Biblioteca para manipular tempo
 # Limpa a tela para melhorar a qualidade do terminal
 def limpar():
   sleep(tempo)
-  os.system('cls') or None
+  os.system('clear') or None
 
 # Menu do mesario
 def menuMesario():
@@ -384,7 +384,12 @@ def encerraProcesso2Turno():
   print('║   {}\t║       {}\t║      {}     ║      {}%\t║'.format(votosSegundoTurno[1][0], votosSegundoTurno[1][1], votosSegundoTurno[1][2], votosSegundoTurno[1][3]))
   print('╚═══════════════╩═══════════════╩════════════╩══════════════════╝', '\n')
 
-  exit()
+  if votosSegundoTurno[0][1] > votosSegundoTurno[1][1]:
+    print('\n══════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[0][0]))
+  else:
+    print('\n══════════════════════{} ganhou!═════════════════════════\n' .format(votosSegundoTurno[1][0]))
+
+  input('Digite qualquer coisa para sair. ')
 
 # Variaveis globais para melhor controle
 
