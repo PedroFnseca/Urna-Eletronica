@@ -216,11 +216,11 @@ def encerraProcesso():
   print('║═══════════════╦════════════════╦══════════════╦════════════════║')
   print('║    PARTIDO    ║   CANDIDATO    ║     VOTOS    ║   % DE VOTOS   ║')
   print('╠═══════════════╬════════════════╬══════════════╬════════════════╣')
-  print('║      44       ║      JAVA      ║      {}\t║     {}%\t ║'.format(votos[0][1], votos[0][2]))
-  print('║      12       ║     PYTHON     ║      {}\t║     {}%\t ║'.format(votos[1][1], votos[1][2]))
-  print('║      07       ║   JAVASCRIPT   ║      {}\t║     {}%\t ║'.format(votos[2][1], votos[2][2]))
-  print('║      00       ║     BRANCO     ║      {}\t║     {}%\t ║'.format(votos[3][1], votos[3][2]))
-  print('║      --       ║      NULO      ║      {}\t║     {}%\t ║'.format(votos[4][1], votos[4][2]))
+  print(f'║      44       ║      JAVA      ║      {votos[0][1]}\t║     {votos[0][2]}%\t ║')
+  print(f'║      12       ║     PYTHON     ║      {votos[1][1]}\t║     {votos[1][2]}%\t ║')
+  print(f'║      07       ║   JAVASCRIPT   ║      {votos[2][1]}\t║     {votos[2][2]}%\t ║')
+  print(f'║      00       ║     BRANCO     ║      {votos[3][1]}\t║     {votos[3][2]}%\t ║')
+  print(f'║      --       ║      NULO      ║      {votos[4][1]}\t║     {votos[4][2]}%\t ║')
   print('╚═══════════════╩════════════════╩══════════════╩════════════════╝', '\n')
 
 
@@ -229,9 +229,9 @@ def encerraProcesso():
   print('║═══════════════╦════════════════╦══════════════╦════════════════║')
   print('║    PARTIDO    ║   CANDIDATO    ║     VOTOS    ║   % DE VOTOS   ║')
   print('╠═══════════════╬════════════════╬══════════════╬════════════════╣')
-  print('║      44       ║      JAVA      ║      {}\t║     {}%\t ║'.format(votos[0][1], votos[0][3]))
-  print('║      12       ║     PYTHON     ║      {}\t║     {}%\t ║'.format(votos[1][1], votos[1][3]))
-  print('║      07       ║   JAVASCRIPT   ║      {}\t║     {}%\t ║'.format(votos[2][1], votos[2][3]))
+  print(f'║      44       ║      JAVA      ║      {votos[0][1]}\t║     {votos[0][3]}%\t ║')
+  print(f'║      12       ║     PYTHON     ║      {votos[1][1]}\t║     {votos[1][3]}%\t ║')
+  print(f'║      07       ║   JAVASCRIPT   ║      {votos[2][1]}\t║     {votos[2][3]}%\t ║')
   print('╚═══════════════╩════════════════╩══════════════╩════════════════╝', '\n')
 
   if verifica2Turno():
@@ -246,7 +246,7 @@ def encerraProcesso():
         ganhador = votos[i][0]
 
     print('╔═══════════════════════════════════════╗')
-    print('║        {} ganhou! Com {} votos\t║'.format(ganhador, votosGanhador))
+    print(f'║        {ganhador} ganhou! Com {votosGanhador} votos\t║')
     print('╚═══════════════════════════════════════╝\n')
 
     input('Aperte enter para finalizar.')
@@ -315,8 +315,8 @@ def liberaVoto2Turno():
   print('╠═══════════════════════╦═══════════════════════╣')
   print('║        CANDIDATO      ║  NUMERO DO CANDIDATO  ║')
   print('╠═══════════════════════╬═══════════════════════╣')
-  print('║ ■ {}\t \t║          {}\t\t║'.format(votosSegundoTurno[0][0], votosSegundoTurno[0][1]))
-  print('║ ■ {}\t \t║          {}\t\t║'.format(votosSegundoTurno[1][0], votosSegundoTurno[1][1]))
+  print(f'║ ■ {votosSegundoTurno[0][0]}\t \t║          {votosSegundoTurno[0][1]}\t\t║')
+  print(f'║ ■ {votosSegundoTurno[1][0]}\t \t║          {votosSegundoTurno[1][1]}\t\t║')
   print('╚═══════════════════════╩═══════════════════════╝')
 
   voto = input('digite o seu voto: ')
@@ -384,8 +384,8 @@ def encerraProcesso2Turno():
   print('║═══════════════╦═══════════════╦════════════╦══════════════════║')
   print('║    PARTIDO    ║   CANDIDATO   ║   VOTOS    ║   % DE VOTOS     ║')
   print('╠═══════════════╬═══════════════╬════════════╬══════════════════╣')
-  print('║   {}\t║       {}\t║      {}     ║      {}%\t║'.format(votosSegundoTurno[0][0], votosSegundoTurno[0][1], votosSegundoTurno[0][2], votosSegundoTurno[0][3]))
-  print('║   {}\t║       {}\t║      {}     ║      {}%\t║'.format(votosSegundoTurno[1][0], votosSegundoTurno[1][1], votosSegundoTurno[1][2], votosSegundoTurno[1][3]))
+  print(f'║   {votosSegundoTurno[0][0]}\t║       {votosSegundoTurno[0][1]}\t║      {votosSegundoTurno[0][2]}     ║      {votosSegundoTurno[0][3]}%\t║')
+  print(f'║   {votosSegundoTurno[1][0]}\t║       {votosSegundoTurno[1][1]}\t║      {votosSegundoTurno[1][2]}     ║      {votosSegundoTurno[1][3]}%\t║')
   print('╚═══════════════╩═══════════════╩════════════╩══════════════════╝', '\n')
 
   if votosSegundoTurno[0][2] > votosSegundoTurno[1][2]:
